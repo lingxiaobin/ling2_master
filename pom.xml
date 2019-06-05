@@ -16,6 +16,7 @@
         <module>ling-solr-service</module>
         <module>ling-solr-web</module>
 
+
     </modules>
     <packaging>pom</packaging>
 
