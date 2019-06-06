@@ -11,6 +11,7 @@
 
     <artifactId>ling-dao</artifactId>
     <packaging>jar</packaging>
+
     <dependencies>
         <!-- Mybatis -->
         <dependency>
