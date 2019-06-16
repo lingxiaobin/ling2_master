@@ -98,6 +98,7 @@ public class solrTest {
 
         //[2]封装查询参数
         SolrQuery query = new SolrQuery("*:*");
+        query.set(CommonParams.Q,"(productId_s:8888888888 AND name_s:sansung爆炸牌手机-1787558661) OR (productId_s:99999999999999 AND name_s:sansung爆炸牌手机131471161)");
         //[3]添加需要回显得内容
         query.set(CommonParams.FL,
                 "id",
