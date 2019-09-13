@@ -15,10 +15,13 @@
         <module>ling-dao</module>
         <module>ling-solr-service</module>
         <module>ling-solr-web</module>
+        <module>ling-o2o-service</module>
+        <module>ling-o2o-web</module>
 
 
     </modules>
     <packaging>pom</packaging>
+
 
     <!-- 集中定义依赖版本号 -->
     <properties>
@@ -113,9 +116,9 @@
                 <version>1.2.28</version>
             </dependency>
             <dependency>
-                <groupId>javassist</groupId>
+                <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.11.0.GA</version>
+                <version>3.20.0-GA</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
@@ -263,13 +266,11 @@
                 <artifactId>xml-apis</artifactId>
                 <version>1.4.01</version>
             </dependency>
-        </dependencies>
 
+        </dependencies>
     </dependencyManagement>
 
-
     <build>
-
         <plugins>
             <!-- java编译插件 -->
             <plugin>
@@ -282,9 +283,7 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-
         </plugins>
-
     </build>
 
 </project>

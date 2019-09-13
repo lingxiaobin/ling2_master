@@ -12,29 +12,92 @@
     <artifactId>ling-dao</artifactId>
     <packaging>jar</packaging>
 
+
+    <properties>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
+        <buildNumber>${maven.build.timestamp}</buildNumber>
+
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+
+        <java-version>1.7</java-version>
+
+        <version-springframework>4.0.4.RELEASE</version-springframework>
+        <version-slf4j>1.6.6</version-slf4j>
+        <version-hibernate.validator>5.0.1.Final</version-hibernate.validator>
+        <version-hibernate.jpa>1.0.1.Final</version-hibernate.jpa>
+        <version-hibernate>4.2.6.Final</version-hibernate>
+        <mysql.version>5.1.35</mysql.version>
+
+    </properties>
+
     <dependencies>
-        <!-- Mybatis -->
         <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
+            <groupId>com.ling.env</groupId>
+            <artifactId>ling-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--hibernate的包-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${version-hibernate}</version>
         </dependency>
         <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${version-hibernate}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>cglib</artifactId>
+                    <groupId>cglib</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>dom4j</artifactId>
+                    <groupId>dom4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.github.miemiedev</groupId>
-            <artifactId>mybatis-paginator</artifactId>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${version-hibernate.validator}</version>
         </dependency>
-        <!-- MySql -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>${version-hibernate.jpa}</version>
         </dependency>
-        <!-- 连接池 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${version-hibernate}</version>
+        </dependency>
+
+        <!-- Spring data jpa -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.6.2.RELEASE</version>
+        </dependency>
+
+
+        <!-- druid dataSource -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
     </dependencies>
 </project>

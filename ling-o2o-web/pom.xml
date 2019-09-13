@@ -9,10 +9,26 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ling-solr-service</artifactId>
+    <artifactId>ling-o2o-web</artifactId>
     <packaging>war</packaging>
 
+
     <dependencies>
+        <dependency>
+            <groupId>com.ling.env</groupId>
+            <artifactId>ling-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ling.env</groupId>
+            <artifactId>ling-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ling.env</groupId>
+            <artifactId>ling-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- Spring -->
         <dependency>
@@ -81,12 +97,20 @@
             <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
-            <groupId>org.apache.solr</groupId>
-            <artifactId>solr-solrj</artifactId>
-            <version>5.3.2</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+
+
     </dependencies>
 
 
