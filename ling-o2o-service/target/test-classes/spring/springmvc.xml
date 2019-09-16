@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 当前应用名称（是注册中心识别的名称） -->
+	<dubbo:application name="dubboxdemo-web"/>
+	<!-- 注册中心地址(zookeeper) -->
+	<dubbo:registry address="zookeeper://192.168.179.129:2181"/>
+
+	<dubbo:reference interface="com.ling.service.ContentService"
+					 id="contentService"></dubbo:reference>
+	<dubbo:reference interface="com.ling.service.SellerService"
+					 id="sellerService"></dubbo:reference>
+	<dubbo:reference interface="com.ling.service.SellerSupportsService"
+					 id="sellerSupportsService"></dubbo:reference>
+	<dubbo:reference interface="com.ling.service.GoodsService"
+					 id="goodsService"></dubbo:reference>
+	<!-- 配置包扫描（同样不需要SpringMVC的包扫描） -->
+<!--	<dubbo:annotation package="*"/>-->
+
+<!--	&lt;!&ndash; SpringMVC的基本控制器 &ndash;&gt;-->
+<!--	<mvc:annotation-driven/>-->
+
+</beans>

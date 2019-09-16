@@ -1,0 +1,6 @@
+com\ling\service\o2o\impl\GoodsServiceImpl.class
+com\ling\service\o2o\impl\ContentServiceImpl.class
+com\ling\service\o2o\impl\SellerSupportsServiceImpl.class
+com\ling\service\o2o\impl\FoodsServiceImpl.class
+com\ling\service\o2o\impl\SellerServiceImpl.class
+com\ling\service\o2o\impl\SerializationOptimizerImpl.class

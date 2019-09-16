@@ -1,0 +1,7 @@
+com\ling\dao\RatingsDao.class
+com\ling\dao\SellerSupportsDao.class
+com\ling\dao\UserInfoDao.class
+com\ling\dao\FoodsDao.class
+com\ling\utils\MySQL5DialectUTF8.class
+com\ling\dao\SellerDao.class
+com\ling\dao\GoodsDao.class
