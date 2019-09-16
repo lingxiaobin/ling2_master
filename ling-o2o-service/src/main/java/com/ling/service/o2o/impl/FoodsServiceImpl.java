@@ -1,4 +1,4 @@
-package com.ling.service.impl;
+package com.ling.service.o2o.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.ling.dao.FoodsDao;

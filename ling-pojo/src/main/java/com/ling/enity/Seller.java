@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.*;
+
 /**
  * 商家信息表
  */
@@ -46,10 +47,14 @@ public class Seller implements Serializable {
     //公告
     private String bulletin;
     //商家实景
-    @Lob @Basic(fetch = FetchType.LAZY) @Column(columnDefinition = "text")
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(columnDefinition = "text")
     private String pics;
     //商家具体信息
-    @Lob @Basic(fetch = FetchType.LAZY) @Column(columnDefinition = "text")
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(columnDefinition = "text")
     private String infos;
 
     //1、关系维护端，负责多对多关系的绑定和解除
@@ -61,16 +66,17 @@ public class Seller implements Serializable {
     //关联到从表的外键名：主表中用于关联的属性名+下划线+从表的主键列名,即authority_id
     //主表就是关系维护端对应的表，从表就是关系被维护端对应的表
     //商家支持的服务信息
-    @ManyToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "seller_seller_supports", joinColumns = @JoinColumn(name = "seller_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "seller_supports_id", referencedColumnName = "id"))
     private List<SellerSupports> sellerSupportsList;
 
     //旗下的商品
-    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+
     //级联保存、更新、删除、刷新;延迟加载。当删除用户，会级联删除该用户的所有文章
     //拥有mappedBy注解的实体类为关系被维护端
     //mappedBy="author"中的author是Article中的author属性
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     private List<Foods> foodsList;
 
 

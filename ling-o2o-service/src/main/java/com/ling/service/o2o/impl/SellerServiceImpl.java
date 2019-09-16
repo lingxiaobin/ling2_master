@@ -1,4 +1,4 @@
-package com.ling.service.impl;
+package com.ling.service.o2o.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.ling.dao.SellerDao;
@@ -16,8 +16,19 @@ public class SellerServiceImpl implements SellerService {
         return  sellerDao.save(seller);
     }
 
+//    @Transactional
     @Override
     public Seller findSellerByid(Long id) {
-        return sellerDao.findOne(id);
+        Seller seller=sellerDao.findOne(id);
+//        seller.getSellerSupportsList().size();
+//        seller.getFoodsList().size();
+        Seller ss=new Seller();
+        ss.setName("12434");
+        Seller s2=sellerDao.save(ss);
+        System.out.println(s2.getId());
+//        if (s2.getId()!=1){
+//            throw new RuntimeException("测试事务");
+//        }
+        return seller;
     }
 }

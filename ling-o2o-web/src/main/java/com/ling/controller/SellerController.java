@@ -1,5 +1,6 @@
 package com.ling.controller;
 
+import com.ling.controller.service.FoodsServiceRef;
 import com.ling.controller.service.SellerServiceRef;
 import com.ling.controller.vo.SellerSupportsVo;
 import com.ling.controller.vo.SellerVo;
@@ -14,11 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class SellerController {
     @Autowired
     private SellerServiceRef sellerServiceRef;
+    @Autowired
+    private FoodsServiceRef foodsServiceRef;
 
     @RequestMapping("/findSellerById")
     @ResponseBody
     public SellerVo findSellerById(Long id) {
-         id = 1L;
+        id = 1L;
         return sellerServiceRef.findSellerById(id);
+    }
+
+    @RequestMapping("/devSolr")
+    @ResponseBody
+    public void devSolr(String meg) {
+        foodsServiceRef.devSolr(meg);
     }
 }

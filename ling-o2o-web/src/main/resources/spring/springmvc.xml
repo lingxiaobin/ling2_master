@@ -9,6 +9,19 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://code.alibabatech.com/schema/dubbo
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+				<property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+				<property name="features">
+					<array>
+						<value>WriteMapNullValue</value>
+						<value>WriteNullStringAsEmpty</value>
+					</array>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 
 	<!-- 当前应用名称（是注册中心识别的名称） -->
 	<dubbo:application name="dubboxdemo-web"/>
@@ -17,12 +30,4 @@
 	<!-- 配置包扫描（同样不需要SpringMVC的包扫描） -->
 	<dubbo:annotation package="com.ling.controller"/>
 
-	<!-- SpringMVC的基本控制器 -->
-	<mvc:annotation-driven/>
-
-	<!-- 配置springmvc的视图解析器 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/"/>
-		<property name="suffix" value=".jsp"/>
-	</bean>
 </beans>

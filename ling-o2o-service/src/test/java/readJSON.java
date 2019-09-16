@@ -1,26 +1,21 @@
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.ling.common.utils.FileUtil;
 
-import com.ling.dao.UserInfoDao;
 import com.ling.enity.Foods;
 import com.ling.enity.Goods;
 import com.ling.enity.SellerSupports;
-import com.ling.enity.UserInfo;
 import com.ling.service.ContentService;
 import com.ling.service.GoodsService;
 import com.ling.service.SellerService;
 import com.ling.service.SellerSupportsService;
 import enity.Seller;
-import enity.jsons;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -78,5 +73,14 @@ public class readJSON {
         goodsService.save(jsonddd.getString("goods"));
         goodsService.save(foodsList);
         System.out.println(222);
+
+
+    }
+
+    @Test
+    public void test2() {
+
+        com.ling.enity.Seller seller3=sellerService.findSellerByid(1L);
+        System.out.println(JSON.toJSONString(seller3.getId()));
     }
 }

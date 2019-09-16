@@ -19,7 +19,7 @@
 			<property name="hibernate.connection.charSet" value="UTF-8" />
 			<!-- 自动输出schema创建DDL语句 update create-->
 
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<!-- 显示SQL语句 -->
 			<property name="hibernate.show_sql" value="true" />
 			<!-- 在显示SQL语句时格式化语句 -->
